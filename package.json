@@ -1,0 +1,62 @@
+{
+  "name": "cubevisualiser",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@heroui/react": "^2.8.7",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "jeasings": "^0.0.16",
+    "mongoose": "^9.1.5",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.13.0",
+    "react-scripts": "5.0.1",
+    "react-syntax-highlighter": "^16.1.0",
+    "remark-gfm": "^4.0.1",
+    "three": "^0.182.0",
+    "web-vitals": "^2.1.4"
+  },
+  "homepage": ".",
+  "scripts": {
+    "start": "concurrently -k -n SERVER,WEBAPP -c yellow \"node start-react.cjs\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
+}

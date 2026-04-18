@@ -1,0 +1,104 @@
+body {
+  margin: 0 !important;
+  font-family: 'Rubik', sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  color: #CCC !important;
+}
+
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@font-face {
+  font-family: 'CuteNotebook';
+  src:
+    url('../fonts/ttf/CuteNotebook.ttf') format('truetype'),
+    url('../fonts/otf/CuteNotebook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MoodyAdolescent';
+  src:
+    url('../fonts/ttf/MoodyAdolescentRegular.ttf') format('truetype'),
+    url('../fonts/otf/MoodyadolescentRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LibraryRecords';
+  src:
+    url('../fonts/ttf/LibraryRecordsRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MondayFeelings';
+  src:
+    url('../fonts/ttf/MondayFeelings.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Motley';
+  src:
+    url('../fonts/ttf/MotleyForcesRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NewClass';
+  src:
+    url('../fonts/ttf/NewClass.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orchard';
+  src:
+    url('../fonts/ttf/Orchard.ttf') format('truetype'),
+    url('../fonts/otf/Orchard.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PineWoods';
+  src:
+    url('../fonts/ttf/PineWords.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GourmetEatery';
+  src:
+    url('../fonts/otf/GourmetEatery.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Takadung';
+  src:
+    url('../fonts/otf/Takadung.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,62 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card container animations */
+.project-container {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Content item animations */
+.project-item {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+/* ===== CARD 1 (RUBIK'S CUBE) ===== */
+.project-container:nth-child(1) { animation-delay: 0.4s; }
+.project-container:nth-child(1) .project-item:nth-child(1) { animation-delay: 0.5s; }
+.project-container:nth-child(1) .project-item:nth-child(2) { animation-delay: 0.6s; }
+.project-container:nth-child(1) .project-item:nth-child(3) { animation-delay: 0.7s; }
+.project-container:nth-child(1) .project-item:nth-child(4) { animation-delay: 0.8s; }
+
+/* ===== CARD 2 (TOASTOKU) ===== */
+.project-container:nth-child(2) { animation-delay: 0.5s; }
+.project-container:nth-child(2) .project-item:nth-child(1) { animation-delay: 0.6s; }
+.project-container:nth-child(2) .project-item:nth-child(2) { animation-delay: 0.7s; }
+.project-container:nth-child(2) .project-item:nth-child(3) { animation-delay: 0.8s; }
+.project-container:nth-child(2) .project-item:nth-child(4) { animation-delay: 0.9s; }
+
+/* ===== CARD 3 (HOW TO RUBIK) ===== */
+.project-container:nth-child(3) { animation-delay: 0.6s; }
+.project-container:nth-child(3) .project-item:nth-child(1) { animation-delay: 0.7s; }
+.project-container:nth-child(3) .project-item:nth-child(2) { animation-delay: 0.8s; }
+.project-container:nth-child(3) .project-item:nth-child(3) { animation-delay: 0.9s; }
+.project-container:nth-child(3) .project-item:nth-child(4) { animation-delay: 1.0s; }
+
+/* ===== CARD 4 (CUBE TRAINER) ===== */
+.project-container:nth-child(4) { animation-delay: 0.7s; }
+.project-container:nth-child(4) .project-item:nth-child(1) { animation-delay: 0.8s; }
+.project-container:nth-child(4) .project-item:nth-child(2) { animation-delay: 0.9s; }
+.project-container:nth-child(4) .project-item:nth-child(3) { animation-delay: 1.0s; }
+.project-container:nth-child(4) .project-item:nth-child(4) { animation-delay: 1.1s; }
+
+/* ===== CARD 5 (UNOAH DISCORD) ===== */
+.project-container:nth-child(5) { animation-delay: 0.8s; }
+.project-container:nth-child(5) .project-item:nth-child(1) { animation-delay: 0.9s; }
+.project-container:nth-child(5) .project-item:nth-child(2) { animation-delay: 1.0s; }
+.project-container:nth-child(5) .project-item:nth-child(3) { animation-delay: 1.1s; }
+.project-container:nth-child(5) .project-item:nth-child(4) { animation-delay: 1.2s; }
+
+/* ===== CARD 6 (UNOAH PYTHON) ===== */
+.project-container:nth-child(6) { animation-delay: 0.9s; }
+.project-container:nth-child(6) .project-item:nth-child(1) { animation-delay: 1.0s; }
+.project-container:nth-child(6) .project-item:nth-child(2) { animation-delay: 1.1s; }
+.project-container:nth-child(6) .project-item:nth-child(3) { animation-delay: 1.2s; }
+.project-container:nth-child(6) .project-item:nth-child(4) { animation-delay: 1.3s; }

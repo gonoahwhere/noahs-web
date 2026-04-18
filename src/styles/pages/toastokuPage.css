@@ -1,0 +1,135 @@
+/* ===== TOASTOKU UI ===== */
+.pfp {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes gradient_animation {
+    0%, 100% { background-position: 0 0; }
+    50% { background-position: 100% 0; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.glow-btn {
+    background: linear-gradient(135deg, #3b7cae, #5a96c7, #4f89c1);
+    color: #fffacd;
+    margin: 0.5rem;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(59, 124, 174, 0.4), 0 0 16px rgba(79, 137, 193, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+.glow-btn:nth-child(1) { animation-delay: 0.4s; }
+.glow-btn:nth-child(2) { animation-delay: 0.5s; }
+.glow-btn:nth-child(3) { animation-delay: 0.6s; }
+.glow-btn:nth-child(4) { animation-delay: 0.7s; }
+.glow-btn:nth-child(5) { animation-delay: 0.8s; }
+.glow-btn:nth-child(6) { animation-delay: 0.9s; }
+.glow-btn:nth-child(7) { animation-delay: 1.0s; }
+.glow-btn:nth-child(8) { animation-delay: 1.1s; }
+.glow-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px rgba(59, 124, 174, 0.6), 0 0 32px rgba(79, 137, 193, 0.5);
+}
+
+.glow-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(79, 137, 193, 0.3) 0%, transparent 60%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.glow-btn:hover::before {
+    top: -10%;
+    left: -10%;
+}
+
+.glow-btn a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    Letter-spacing: 0.5px;
+}
+.glow-btn:hover a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title {
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+    animation-delay: 0.1s;
+}
+
+.stats {
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+    animation-delay: 0.2s;
+    font-size: 1.5rem;
+}
+
+.toastoku-center {
+    text-align: center;
+}
+
+/* ===== MOBILE UI ===== */
+@media screen and (max-width: 768px) {
+    .pfp {
+        width: 125px;
+        height: 125px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .stats {
+        font-size: 0.9rem;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .glow-btn {
+        width: 80%;
+        max-width: 250px;
+        margin: 0.25rem;
+    }
+}

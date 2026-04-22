@@ -60,58 +60,58 @@ const DECOS = [
 
 const BURST_COLOURS = [
     // Cyans & blues
-    [102, 201, 255],
-    [180, 200, 255],
-    [70, 160, 230],
-    [140, 220, 255],
-    [60, 130, 200],
-    [180, 230, 255],
-    [90, 180, 220],
+    0x66c9ff,
+    0xb4c8ff,
+    0x46a0e6,
+    0x8cdcff,
+    0x3c82c8,
+    0xb4e6ff,
+    0x5ab4dc,
 
     // Pinks & reds
-    [255, 140, 180],
-    [200, 100, 100],
-    [255, 105, 150],
-    [230, 80, 120],
-    [255, 170, 200],
-    [200, 60, 90],
-    [255, 180, 195],
+    0xff8cb4,
+    0xc86464,
+    0xff6996,
+    0xe65078,
+    0xffaac8,
+    0xc83c5a,
+    0xffb4c3,
 
     // Greens
-    [150, 220, 150],
-    [100, 200, 130],
-    [170, 240, 170],
-    [80, 180, 110],
-    [200, 240, 180],
+    0x96dc96,
+    0x64c882,
+    0xaaf0aa,
+    0x50b46e,
+    0xc8f0b4,
 
     // Yellows & oranges
-    [255, 220, 100],
-    [255, 180, 60],
-    [240, 200, 80],
-    [255, 210, 140],
-    [230, 160, 50],
-    [255, 240, 150],
+    0xffdc64,
+    0xffb43c,
+    0xf0c850,
+    0xffd28c,
+    0xe6a032,
+    0xfff096,
 
     // Purples & magentas
-    [180, 130, 255],
-    [210, 150, 240],
-    [150, 100, 220],
-    [230, 180, 255],
-    [170, 80, 200],
-    [200, 160, 255],
+    0xb482ff,
+    0xd296f0,
+    0x9664dc,
+    0xe6b4ff,
+    0xaa50c8,
+    0xc8a0ff,
 
     // Warm & cosy
-    [230, 210, 180],
-    [210, 180, 140],
-    [240, 220, 200],
-    [200, 160, 120],
+    0xe6d2b4,
+    0xd2b48c,
+    0xf0dcc8,
+    0xc8a078,
 
     // Whites & soft greys
-    [230, 235, 240],
-    [210, 220, 230],
-    [245, 245, 250],
-    [200, 210, 220],
-    [255, 250, 240],
+    0xe6ebf0,
+    0xd2dce6,
+    0xf5f5fa,
+    0xc8d2dc,
+    0xfffaf0
 ]
 
 export default function Background() {
@@ -203,7 +203,7 @@ export default function Background() {
                         continue 
                     }
 
-                    burstCtx.fillStyle = `rgba(${p.col[0]}, ${p.col[1]}, ${p.col[2]}, ${p.life})`;
+                    burstCtx.fillStyle = `rgba(${(p.col >> 16) & 0xff}, ${(p.col >> 8) & 0xff}, ${p.col & 0xff}, ${p.life})`;
                     burstCtx.fillRect(Math.round(p.x - p.size / 2), Math.round(p.y - p.size / 2), p.size, p.size);
                 }
             });

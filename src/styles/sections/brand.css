@@ -1,0 +1,67 @@
+:root {
+    --background: #0F1419;
+    --dark-bg: #0A0E14;
+    --darker-bg: #05070A;
+    --card-panel: #1A202C;
+    --primary: #1E88E5;
+    --secondary: #1565C0;
+    --accent: #66c9ff;
+    --text-primary: #66c9ff;
+    --text-muted: #5B9FD4;
+    --success: #4DB8A8;
+    --error: #FF6B9D;
+    --warning: #FFD54F;
+    --info: #66c9ff;
+}
+
+.scroll-target {
+    scroll-margin-top: calc(var(--header-height) + 8px);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem !important;
+    color: var(--primary);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+}
+
+.brand h2 {
+    background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.brand p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.brand-buttons {
+    display: flex;
+    gap: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.controls button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.controls label {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    margin-right: 10px;
+    user-select: none;
+    font-weight: bold;
+}

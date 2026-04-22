@@ -142,20 +142,16 @@ export default function Background() {
             { stars: [], count: 80, speedFactor: 0.008, sizeRange: [0.3, 0.9] },
             { stars: [], count: 60, speedFactor: 0.018, sizeRange: [0.6, 1.3] },
             { stars: [], count: 40, speedFactor: 0.035, sizeRange: [1.0, 2.0] },
-        ]
+        ];
 
-        layers.forEach(layer => {
-            for (let i = 0; i < layer.count; i++) {
-                layer.stars.push({
-                    bx: Math.random(),
-                    by: Math.random(),
-                    r: layer.sizeRange[0] + Math.random() * (layer.sizeRange[1] - layer.sizeRange[0]),
-                    phase: Math.random() * Math.PI * 2,
-                    speed: Math.random() * 0.4 + 0.7,
-                    hue: Math.random() > 0.65 ? '102, 201, 255' : '200, 215, 235',
-                });
-            }
-        });
+        layer.stars.push(...Array.from({ length: layer.count }, () => ({
+            bx: Math.random(),
+            by: Math.random(),
+            r: layer.sizeRange[0] + Math.random() * (layer.sizeRange[1] - layer.sizeRange[0]),
+            phase: Math.random() * Math.PI * 2,
+            speed: Math.random() * 0.4 + 0.7,
+            hue: Math.random() > 0.65 ? '102, 201, 255' : '200, 215, 235',
+        })));
 
         let animId1, animId2;
 
@@ -216,11 +212,11 @@ export default function Background() {
         const onCLickBurst = (e) => {
             const count = 12 + Math.floor(Math.random() * 8);
             const col = BURST_COLOURS[Math.floor(Math.random() * BURST_COLOURS.length)];
-            const particles = [];
-            for (let i = 0; i < count; i++) {
+            const particles = Array.from({ length: count }, (_, i) =>  {
                 const angle = (Math.PI * 2 / count) * i + (Math.random() - 0.5) * 0.6;
                 const speed = 1.5 + Math.random() * 3;
-                particles.push({
+
+                return {
                     x: e.clientX, y: e.clientY,
                     vx: Math.cos(angle) * speed,
                     vy: Math.sin(angle) * speed,
@@ -228,8 +224,8 @@ export default function Background() {
                     decay: 0.015 + Math.random() * 0.02,
                     size: 3 + Math.random() * 3,
                     col,
-                });
-            }
+                };
+            });
 
             burstsRef.current.push(particles);
         };

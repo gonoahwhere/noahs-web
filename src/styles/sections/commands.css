@@ -1,0 +1,59 @@
+:root {
+    --background: #0F1419;
+    --dark-bg: #0A0E14;
+    --darker-bg: #05070A;
+    --card-panel: #1A202C;
+    --primary: #1E88E5;
+    --secondary: #1565C0;
+    --accent: #66c9ff;
+    --text-primary: #66c9ff;
+    --text-muted: #5B9FD4;
+    --success: #4DB8A8;
+    --error: #FF6B9D;
+    --warning: #FFD54F;
+    --info: #66c9ff;
+}
+
+.scroll-target {
+    scroll-margin-top: calc(var(--header-height) + 8px);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem !important;
+    color: var(--primary);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+}
+
+.commands h2 {
+    background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.commands {
+    padding: 100px 0;   
+}
+
+.commands-grid,
+.section-title {
+    position: relative;
+    z-index: 1;
+}
+
+.commands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.command-card {
+    background-color: var(--card-panel);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}

@@ -13,6 +13,7 @@ import Background from './components/Background.js'
 import MainPage from './pages/MainPage.js'
 import Toastoku from './pages/ToastokuPage.js'
 import Projects from './pages/ProjectsPage.js'
+import ToastokuDashboardPage from './pages/ToastokuDashboardPage.js'
 import ErrorPage from './pages/404Page.js'
 
 /* ===== PARTIALS ===== */
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/" element={<MainPage />} />
                     <Route path="/toastoku" element={<Toastoku />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/toastoku/dashboard" element={<ToastokuDashboardPage />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </main>

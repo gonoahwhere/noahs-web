@@ -21,7 +21,7 @@ export default function Nav() {
     
     // SYNC TAB WITH ROUTE
     useEffect(() => {
-        const current = pages.find(p => p.path === location.pathname)?.id || null;
+        const current = pages.find(p => p.path === location.pathname || (p.path !== "/" && location.pathname.startsWith(p.path + "/")))?.id || null;
         setActive(current);
         setMenuOpen(false);
     }, [location.pathname]);

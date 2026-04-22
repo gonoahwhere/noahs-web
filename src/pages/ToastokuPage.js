@@ -14,8 +14,7 @@ export default function Toastoku() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const API_URL = 'https://gonoahwhere.com'
-        fetch(`${API_URL}/api/stats`)
+        fetch('https://www.gonoahwhere.com/api/stats')
             .then(res => res.json())
             .then(data => setStats(data[0]))
             .catch(err => setError(err.message));
@@ -47,6 +46,7 @@ export default function Toastoku() {
                     <button className='glow-btn'><i class='fas fa-tools'></i> <a href='https://discord.gg/TQNQSen7Ur'>SUPPORT SERVER</a></button>
                     <button className='glow-btn'><i class='fas fa-vote-yea'></i> <a href='https://top.gg/bot/1384180054984097975/vote'>VOTE FOR TOASTOKU</a></button>
                     <button className='glow-btn'><i className='fas fa-comment'></i> <a href='https://top.gg/bot/1384180054984097975#reviews'>LEAVE A REVIEW</a></button>
+                    <button className='glow-btn'><i className='fas fa-gear'></i> <a href='https://gonoahwhere.com/toastoku/dashboard'>DASHBOARD</a></button>
                 </div>
                 <br />
                 <br />

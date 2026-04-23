@@ -9,7 +9,9 @@ import CommandsPage from '../components/CommandSection.js'
 import SidebarComponent from '../components/SideBar.js'
 import DashboardLoginPage from '../components/dashboardLogin.js'
 import UserPage from '../components/userPage.js'
+import ProfilePage from '../components/profilePage.js'
 import QuestsPage from '../components/quests.js'
+import LeaderboardPage from '../components/LeaderboardPage.js'
 
 /* ===== DISPLAY ===== */
 function ToastokuDashboardPage() {
@@ -100,7 +102,9 @@ function ToastokuDashboardPage() {
                 <main style={{ flex: 1, paddingTop: 0 }}>
                     {activeNav === 'changelogs' && <ChangelogPage />}
                     {activeNav === 'commands' && <CommandsPage />}
+                    {activeNav === 'leaderboard' && <LeaderboardPage />}
                     {activeNav === 'quests' && <QuestsPage quests={quests} />}
+                    {activeNav === 'profile' && <ProfilePage user={user} profile={profile}/>}
                     {activeNav === 'user' && <UserPage user={user} profile={profile}/>}
                 </main>
             </div>

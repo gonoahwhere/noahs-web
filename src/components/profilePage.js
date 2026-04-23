@@ -1,44 +1,25 @@
 /* ===== IMPORTS ===== */
 import { useEffect, useState } from 'react';
 
-/* ===== ACCOUNT ===== */
-function getAccountCreatedDate(userId) {
-    const DISCORD_EPOCH = 1420070400000;
-
-    const binary = Number(userId).toString(2);
-    const timestamp = parseInt(binary.slice(0, -22), 2) + DISCORD_EPOCH;
-
-    return new Date(timestamp);
-}
-
-function formatAccountAge(userId) {
-    const created = getAccountCreatedDate(userId);
-    const diff = Date.now() - created.getTime();
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
-    if (days >= 365) return `${Math.floor(days / 365)}y ago`;
-    if (days >= 30) return `${Math.floor(days / 30)}mo ago`;
-    if (days >= 7) return `${Math.floor(days / 7)}w ago`;
-    return `${days}d ago`;
-}
-
 /* ===== PAGE ===== */
-function UserPage({ user, profile }) {
+function ProfilePage({ user, profile }) {
     const [rank, setRank] = useState(null);
-
+    
     useEffect(() => {
         fetch('https://www.gonoahwhere.com/api/leaderboard?category=level&limit=10000')
             .then(res => res.json())
             .then(data => {
                 const map = data.rankMap;
-                setRank(map?.[user.id] ?? null);
+
+                setRank(
+                    map?.[String(user.id)] ?? null
+                );
             })
             .catch(() => setRank(null));
     }, [user]);
     
     const tags = getUserTags(user, profile);
-
+    
     return (
         <div style={styles.container}>
 
@@ -71,35 +52,27 @@ function UserPage({ user, profile }) {
                     </div>
                 </div>
 
-                {/* IDENTITY SECTION */}
-                <Section title="Identity" color="#00D4FF">
-                    <Row label="User ID" value={user.id} />
-                    <Row label="Username" value={`@${user.username}`} />
-                    <Row label="Display Name" value={user.global_name || "N/A"} />
-                    <Row label="Created" value={getAccountCreatedDate(user.id).toLocaleDateString()} />
-                    <Row label="Account Age" value={formatAccountAge(user.id)} />
+                {/* PROGRESS */}
+                <Section title="Progress" color="#00BFFFF">
+                    <Row label="Rank" value={rank != null ? `#${rank}` : "Unranked"} />
+                    <Row label="Level" value={profile?.rank?.level ?? "0"} />
+                    <Row label="EXP" value={profile?.rank?.exp ?? "0"} />
                 </Section>
 
-                {/* ENGAGEMENT */}
-                <Section title="Engagement" color="#00CCFF">
-                    <Row label="Commands Used" value={profile?.commandsUsed ?? "0"} />
-                    <Row label="Votes" value={profile?.misc?.votes ?? "0"} />
-                    <Row label="Boosters" value={profile?.misc?.boosters ?? "0"} />
+                {/* ECONOMY */}
+                <Section title="Economy" color="#1E90FF">
+                    <Row label="Earned Toasts" value={(profile?.balance?.currentToasts + profile?.balance?.spentToasts) ?? "0"} />
+                    <Row label="Current Toasts" value={profile?.balance?.currentToasts ?? "0"} />
+                    <Row label="Spent Toast" value={profile?.balance?.spentToasts ?? "0"} />
                 </Section>
 
-                {/* PRIVACY */}
-                <Section title="Privacy" color="#99DDFF">
-                    <Row label="Anonymous" value={profile?.anonymous ? 'Enabled' : 'Disabled'}/>
-                    <Row label="Anonymous Name" value={profile?.anonymous ? profile?.anonymousName : 'Anonymous Mode Disabled'}/>
+                {/* GAMEPLAY */}
+                <Section title="Gameplay" color="#4C90D9">
+                    <Row label="Games Played" value={profile?.misc?.gamesPlayed ?? "0"} />
+                    <Row label="Bonus Hints" value={profile?.misc?.hints ?? "0"} />
+                    <Row label="Daily Hints" value={profile?.misc?.dailyHints ?? "0"} />
+                    <Row label="Hints Used" value="0 (placeholder)" />
                 </Section>
-
-                {/* ACHIEVEMENTS */}
-                <Section title="Achievements" color="#66C9FF">
-                    <Row label="Last Achievement" value="Solve a 'Hard' puzzle with no hints." />
-                    <Row label="Total Achievements" value="532" />
-                    <Row label="Badges" value={profile?.achieve?.badges?.length ?? "0"} />
-                </Section>
-
             </div>
         </div>
     );
@@ -127,6 +100,7 @@ function Row({ label, value }) {
         </div>
     );
 }
+
 
 /* ===== TAG LOGIC ===== */
 function getUserTags(user) {
@@ -252,4 +226,4 @@ const styles = {
     },
 };
 
-export default UserPage;
+export default ProfilePage;

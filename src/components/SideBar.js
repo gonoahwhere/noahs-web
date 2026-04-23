@@ -90,6 +90,7 @@ function SidebarComponent({ activeNav, setActiveNav }) {
                     { id: 'commands', label: 'Commands', color: '#00D4FF' },
                     { id: 'quests', label: 'Quests', color: '#1E90FF' },
                     { id: 'leaderboard', label: 'Leaderboard', color: '#0099FF' },
+                    { id: 'profile', label: 'Profile', color: '#64B5F6' },
                     { id: 'user', label: 'User', color: '#64B5F6' },
                     { id: 'settings', label: 'Settings', color: '#4DB8FF' },
                 ].map((item) => (

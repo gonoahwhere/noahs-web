@@ -109,7 +109,7 @@ function ProjectsPage() {
                                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)'
                                 }}
                             >
-                                ✦ LAUNCH GAME ✦
+                                ✦ USE CUBE ✦
                             </a>
                         </div>
                     </div>
@@ -295,7 +295,7 @@ function ProjectsPage() {
                                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)'
                                 }}
                             >
-                                ✦ LAUNCH DOCS ✦
+                                ✦ VIEW DOCS ✦
                             </a>
                         </div>
                     </div>

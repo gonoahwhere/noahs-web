@@ -1,6 +1,18 @@
 /* ===== IMPORTS ===== */
 import { useEffect, useState } from 'react';
 
+/* ===== HELPERS ===== */
+const formatNumber = (num) => {
+    if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1) + 'B';
+    } else if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+    }
+    return num.toString();
+};
+
 /* ===== ACCOUNT ===== */
 function getAccountCreatedDate(userId) {
     const DISCORD_EPOCH = 1420070400000;
@@ -82,22 +94,22 @@ function UserPage({ user, profile }) {
 
                 {/* ENGAGEMENT */}
                 <Section title="Engagement" color="#00CCFF">
-                    <Row label="Commands Used" value={profile?.commandsUsed ?? "0"} />
-                    <Row label="Votes" value={profile?.misc?.votes ?? "0"} />
-                    <Row label="Boosters" value={profile?.misc?.boosters ?? "0"} />
+                    <Row label="Commands Used" value={formatNumber(profile?.commandsUsed ?? "0")} />
+                    <Row label="Votes" value={formatNumber(profile?.misc?.votes ?? "0")} />
+                    <Row label="Boosters" value={formatNumber(profile?.misc?.boosters ?? "0")} />
                 </Section>
 
                 {/* PRIVACY */}
                 <Section title="Privacy" color="#99DDFF">
                     <Row label="Anonymous" value={profile?.anonymous ? 'Enabled' : 'Disabled'}/>
-                    <Row label="Anonymous Name" value={profile?.anonymous ? profile?.anonymousName : 'Anonymous Mode Disabled'}/>
+                    <Row label="Anonymous Name" value={profile?.anonymousName}/>
                 </Section>
 
                 {/* ACHIEVEMENTS */}
                 <Section title="Achievements" color="#66C9FF">
-                    <Row label="Last Achievement" value="Solve a 'Hard' puzzle with no hints." />
-                    <Row label="Total Achievements" value="532" />
-                    <Row label="Badges" value={profile?.achieve?.badges?.length ?? "0"} />
+                    <Row label="Last Achievement" value="Solve a 'Hard' puzzle with no hints. (placeholder)" />
+                    <Row label="Total Achievements" value="532 (placeholder)" />
+                    <Row label="Badges" value={profile?.achieve?.badges?.length ?? "0 (placeholder)"} />
                 </Section>
 
             </div>

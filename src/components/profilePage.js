@@ -1,6 +1,18 @@
 /* ===== IMPORTS ===== */
 import { useEffect, useState } from 'react';
 
+/* ===== HELPERS ===== */
+const formatNumber = (num) => {
+    if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1) + 'B';
+    } else if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+    }
+    return num.toString();
+};
+
 /* ===== PAGE ===== */
 function ProfilePage({ user, profile }) {
     const [rank, setRank] = useState(null);
@@ -54,23 +66,23 @@ function ProfilePage({ user, profile }) {
 
                 {/* PROGRESS */}
                 <Section title="Progress" color="#00BFFFF">
-                    <Row label="Rank" value={rank != null ? `#${rank}` : "Unranked"} />
-                    <Row label="Level" value={profile?.rank?.level ?? "0"} />
-                    <Row label="EXP" value={profile?.rank?.exp ?? "0"} />
+                    <Row label="Rank" value={formatNumber(rank != null ? `#${rank}` : "Unranked")} />
+                    <Row label="Level" value={formatNumber(profile?.rank?.level ?? "0")} />
+                    <Row label="EXP" value={formatNumber(profile?.rank?.exp ?? "0")} />
                 </Section>
 
                 {/* ECONOMY */}
                 <Section title="Economy" color="#1E90FF">
-                    <Row label="Earned Toasts" value={(profile?.balance?.currentToasts + profile?.balance?.spentToasts) ?? "0"} />
-                    <Row label="Current Toasts" value={profile?.balance?.currentToasts ?? "0"} />
-                    <Row label="Spent Toast" value={profile?.balance?.spentToasts ?? "0"} />
+                    <Row label="Earned Toasts" value={formatNumber((profile?.balance?.currentToasts + profile?.balance?.spentToasts) ?? "0")} />
+                    <Row label="Current Toasts" value={formatNumber(profile?.balance?.currentToasts ?? "0")} />
+                    <Row label="Spent Toast" value={formatNumber(profile?.balance?.spentToasts ?? "0")} />
                 </Section>
 
                 {/* GAMEPLAY */}
                 <Section title="Gameplay" color="#4C90D9">
-                    <Row label="Games Played" value={profile?.misc?.gamesPlayed ?? "0"} />
-                    <Row label="Bonus Hints" value={profile?.misc?.hints ?? "0"} />
-                    <Row label="Daily Hints" value={profile?.misc?.dailyHints ?? "0"} />
+                    <Row label="Games Played" value={formatNumber(profile?.misc?.gamesPlayed ?? "0")} />
+                    <Row label="Bonus Hints" value={formatNumber(profile?.misc?.hints ?? "0")} />
+                    <Row label="Daily Hints" value={formatNumber(profile?.misc?.dailyHints ?? "0")} />
                     <Row label="Hints Used" value="0 (placeholder)" />
                 </Section>
             </div>

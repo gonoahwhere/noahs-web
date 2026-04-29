@@ -30,6 +30,7 @@ const todoData = {
             "Vote webhook to use new one",
             "Leaderboard command to use choices rather than menu",
             "Changelog command redirects to dashboard",
+            "Leaderboard and profile commands send as ephemeral for anonymous users"
         ]
     },
 
